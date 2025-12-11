@@ -1,0 +1,14 @@
+name: Run Tests
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Testes a executar'
+        required: true
+        default: 'all'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Rodando ${{ github.event.inputs.suite }}"

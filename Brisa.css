@@ -1020,6 +1020,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
+<<<<<<< HEAD
         /* ==================== NEWSLETTER BUTTON ==================== */
 /* Substitui o botão do WhatsApp - posição fixa no canto inferior direito */
 
@@ -1277,6 +1278,38 @@
   to { transform: scale(1); }
 }
 
+=======
+        /* ==================== WHATSAPP BUTTON ==================== */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+>>>>>>> b16dba798b0a9e0e896c9b37884105c26461aeda
 
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 1024px) {
