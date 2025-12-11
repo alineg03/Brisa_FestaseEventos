@@ -406,8 +406,6 @@
             </div>
         </div>
     </footer>
-
-<<<<<<< HEAD
    <!-- Botão da Newsletter (substitui whatsapp-btn) -->
 <div class="newsletter-container">
     <button class="newsletter-bell" id="openModal" aria-label="Cadastre-se para novidades e promoções">
@@ -460,147 +458,8 @@
   </div>
 
   <script src="script.js"></script>
-=======
-    <!-- WhatsApp Botãoo -->
-    <a href="https://wa.me/5561982830878" class="whatsapp-btn" target="_blank">💬</a>
-    <script>
 
-        // ==================== MOBILE MENU ====================
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // ==================== HEADER SCROLL ====================
-        const header = document.getElementById('header');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // ==================== SMOOTH SCROLL ====================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // ==================== FADE IN ON SCROLL ====================
-        const fadeElements = document.querySelectorAll('.fade-in');
-
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        fadeElements.forEach(el => fadeObserver.observe(el));
-
-        // ==================== CONFETTI EFFECT ====================
-        function createConfetti(e) {
-            const button = e.currentTarget;
-            const rect = button.getBoundingClientRect();
-            const colors = ['#E91E8C', '#2ECC71', '#F1C40F', '#3498DB', '#9B59B6'];
-
-            for (let i = 0; i < 15; i++) {
-                const confetti = document.createElement('div');
-                confetti.style.cssText = `
-                    position: fixed;
-                    width: 10px;
-                    height: 10px;
-                    background: ${colors[Math.floor(Math.random() * colors.length)]};
-                    border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
-                    pointer-events: none;
-                    z-index: 9999;
-                    left: ${rect.left + rect.width / 2}px;
-                    top: ${rect.top + rect.height / 2}px;
-                `;
-                document.body.appendChild(confetti);
-
-                const angle = (Math.random() * 360) * (Math.PI / 180);
-                const velocity = 5 + Math.random() * 5;
-                const vx = Math.cos(angle) * velocity;
-                const vy = Math.sin(angle) * velocity;
-
-                let x = 0, y = 0, opacity = 1;
-
-                function animate() {
-                    x += vx;
-                    y += vy + 2;
-                    opacity -= 0.02;
-
-                    confetti.style.transform = `translate(${x}px, ${y}px) rotate(${x * 5}deg)`;
-                    confetti.style.opacity = opacity;
-
-                    if (opacity > 0) {
-                        requestAnimationFrame(animate);
-                    } else {
-                        confetti.remove();
-                    }
-                }
-
-                setTimeout(() => animate(), i * 30);
-            }
-        }
-
-        document.querySelectorAll('.btn-confetti').forEach(btn => {
-            btn.addEventListener('click', createConfetti);
-        });
-
-        // ==================== FORM SUBMISSION ====================
-        const contactForm = document.getElementById('contactForm');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const phone = formData.get('phone');
-            const event = formData.get('event');
-            const message = formData.get('message');
-
-            // Create WhatsApp message
-            const whatsappMessage = `Olá! Me chamo ${name}.\n\nTipo de evento: ${event}\n\nMensagem: ${message || 'Gostaria de mais informações sobre o orçamento solicitado.'}\n\nMeu telefone: ${phone}`;
-
-            const whatsappUrl = `https://wa.me/5561982830878?text=${encodeURIComponent(whatsappMessage)}`;
-
-            window.open(whatsappUrl, '_blank');
-
-            // Reset form
-            contactForm.reset();
-
-            alert('Redirecionando para o WhatsApp...');
-        });
-
-
-    </script>
->>>>>>> b16dba798b0a9e0e896c9b37884105c26461aeda
-
+  
 </body>
 
 </html>
